@@ -6,20 +6,30 @@ class App extends Component {
   state={
     text:undefined,
     author:undefined,
-    color:undefined
+    color:undefined,
+    opacity:1
   }
   componentWillMount(){
     this.getQuote();
   }
+  dosth(){
+    document.getElementById('quote-box').classList.remove('hide');
+  setTimeout(function(){
+    document.getElementById('quote-box').classList.add('show')
+   }, 1000);
+  }
+  
   getQuote= async ()=>{
    const API_call= await fetch("https://talaikis.com/api/quotes/random/");
    const data=await API_call.json();
+   const elem=document.getElementById('quote-box');
+   elem.classList.add('hide');
    this.setState((state)=>({
      text:data.quote,
      author:data.author,
      color:pallete[Math.floor(Math.random()*pallete.length)]
    }));
-   
+   this.dosth();
   }
   render() {
     return (
