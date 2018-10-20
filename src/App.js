@@ -12,37 +12,31 @@ class App extends Component {
   componentWillMount(){
     this.getQuote();
   }
-  dosth(){
-    document.getElementById('quote-box').classList.remove('hide');
-  setTimeout(function(){
-    document.getElementById('quote-box').classList.add('show')
-   }, 1000);
-  }
+ 
   
   getQuote= async ()=>{
    const API_call= await fetch("https://talaikis.com/api/quotes/random/");
    const data=await API_call.json();
-   const elem=document.getElementById('quote-box');
-   elem.classList.add('hide');
+  
+
    this.setState((state)=>({
      text:data.quote,
      author:data.author,
      color:pallete[Math.floor(Math.random()*pallete.length)]
    }));
-   this.dosth();
   }
   render() {
     return (
       <div className="App" style={{backgroundColor:this.state.color}}>
         <div className="card" id="quote-box">
           <div className="mycontainer">
-          <i class="fas fa-quote-left"></i><p id="text" style={{color:this.state.color}}>{this.state.text}</p><i class="fas fa-quote-right"></i>
+          <i className="fas fa-quote-left"></i><p id="text" style={{color:this.state.color}}>{this.state.text}</p><i className="fas fa-quote-right"></i>
             <p id="author" style={{color:this.state.color}}>{'-'+this.state.author}</p>
           </div>
           <hr/>
-          <div class="footer">
+          <div>
         
-           <a id="tweeet-quote" href={"https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text="+ encodeURIComponent('"' +this.state.text + '" ' +'\n'+'-'+ this.state.author)} target="_blank"> <i class="fab fa-twitter myicon" style={{backgroundColor:this.state.color}}></i></a>
+           <a id="tweeet-quote" href={"https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text="+ encodeURIComponent('"' +this.state.text + '" ' +'\n'+'-'+ this.state.author)} target="_blank"> <i className="fab fa-twitter myicon" style={{backgroundColor:this.state.color}}></i></a>
             <button id="new-quote" style={{backgroundColor:this.state.color}} onClick={this.getQuote}>Generate Quote</button>
           </div>
         </div>
