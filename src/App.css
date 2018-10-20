@@ -1,32 +1,75 @@
-.App {
-  text-align: center;
+body{
+  font-family: 'Mali', cursive;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.card {
+  width:300px;
+  padding:15px 30px;
+  background-color:white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ 
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.App{
+  height:100vh;
+  display:flex;
+  align-items:center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+#text{
+  font-weight:500;
+  font: size 1.15em;
+  text-align:left;
+}
+#author{
+  text-align:right;
+  margin-top:40px;
+  font-weight:100;
+  font-size:1.1em;
+  font-family: 'Charmonman', cursive;
 }
 
-.App-link {
-  color: #61dafb;
+button{
+  color:white;
+  padding:5px;
+  border:none;
+  float:right;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+button:hover{
+  -moz-transform: scale(1.2);
+-webkit-transform: scale(1.2);
+-o-transform: scale(1.2);
+-ms-transform: scale(1.2);
+transform: scale(1.01);
+opacity:0.8;
+}
+button:focus{
+  outline:0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer{
+  display:block;
 }
+.myicon{
+  color:white;
+  padding:8px;
+  border-radius:20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.myicon:hover{
+  opacity:0.8;
+}
+hr{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.fa-quote-right{
+  float:right;
+  opacity:0.8;
+  color:gray;
+}
+.fa-quote-left{
+  float:left;
+  margin-right:15px;
+  opacity:0.8;
+  color:gray;
+}
+
